@@ -5,7 +5,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,7 +32,7 @@ public class AsterixController {
             @RequestParam(required = false) Integer age,
             @RequestParam(required = false) String profession
     ) {
-        List<Character> foundCharacters = new ArrayList<>();
+        List<Character> foundCharacters;
 
         if (id != null) {
             Optional<Character> character = characterRepo.findById(id);
